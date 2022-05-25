@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit';
+import { LitElement, html, css } from 'lit';
 import { customElement, property, query } from 'lit/decorators.js';
 import solve from '../../math';
 
@@ -23,12 +23,22 @@ export default class Graph extends LitElement {
 
   // style stuff, like colour
   @property() lineColour: string = 'red';
+  @property() gridColour: string = 'rgba(0, 0, 0, 0.1)';
+  @property() backgroundColour: string = 'white';
 
   // get a reference to the canvas for rendering
   // @ts-ignore
   @query('canvas') canvas: HTMLCanvasElement;
   // @ts-ignore
   gl: CanvasRenderingContext2D;
+
+  // set the styles
+  static styles = css`
+    figure {
+      display: inline-block;
+      margin: 0;
+    }
+  `;
 
   /**
    * When the document is created, the canvas should be written to.
@@ -60,7 +70,7 @@ export default class Graph extends LitElement {
     console.log(pixelsPerPointX, pixelsPerPointY);
 
     // draw with light grey
-    this.gl.strokeStyle = 'rgba(0, 0, 0, 0.1)';
+    this.gl.strokeStyle = this.gridColour;
     this.gl.lineWidth = 1;
 
     // render all the squares
