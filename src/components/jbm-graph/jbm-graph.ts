@@ -60,7 +60,7 @@ export default class Graph extends LitElement {
     console.log(pixelsPerPointX, pixelsPerPointY);
 
     // draw with light grey
-    this.gl.strokeStyle = '#e3e3e3';
+    this.gl.strokeStyle = 'rgba(0, 0, 0, 0.1)';
     this.gl.lineWidth = 1;
 
     // render all the squares
