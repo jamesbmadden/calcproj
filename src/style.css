@@ -1,8 +1,25 @@
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+/**
+  body should split into 2: nav on left and article on right
+  jbm-nav should style itself, article needs set styles
+*/
+body {
+  position: absolute;
+  top: 0;       left: 0;
+  height: 100%; width: 100vw;
+  display: flex;
+  flex-direction: row;
+  background: #e0f2f1;
+  margin: 0;
+}
+
+article {
+  box-sizing: border-box;
+  padding: 1rem;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  background: white;
+  border-top-left-radius: 32px;
+  border-bottom-left-radius: 32px;
 }
