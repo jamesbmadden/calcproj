@@ -13,10 +13,16 @@ export default class Graph extends LitElement {
   @property() startX: number = -5;
   @property() startY: number = -2;
   @property() xRange: number = 10;
-  @property() yRange: number = 4;
+  @property() yRange: number = 5;
+  // also size the camera
+  @property() width: number = 300;
+  @property() height: number = 150;
 
   // the formula to render
   @property() formula: string = 'x^2';
+
+  // style stuff, like colour
+  @property() lineColour: string = 'red';
 
   // get a reference to the canvas for rendering
   // @ts-ignore
@@ -78,7 +84,7 @@ export default class Graph extends LitElement {
   drawLine () {
 
     // draw with red
-    this.gl.strokeStyle = 'red';
+    this.gl.strokeStyle = this.lineColour;
     this.gl.lineWidth = 4;
 
     // find out how many pixels per 1 on the grid
@@ -133,7 +139,7 @@ export default class Graph extends LitElement {
 
     return html`
       <figure>
-        <canvas></canvas>
+        <canvas width=${this.width} height=${this.height}></canvas>
         <figcaption>${this.formula}</figcaption>
       </figure>
     `;
