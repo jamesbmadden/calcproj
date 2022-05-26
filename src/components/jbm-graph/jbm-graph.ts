@@ -26,6 +26,8 @@ export default class Graph extends LitElement {
   @property() gridColour: string = 'rgba(0, 0, 0, 0.1)';
   @property() backgroundColour: string = 'white';
 
+  @property() img: string | null = null;
+
   // get a reference to the canvas for rendering
   // @ts-ignore
   @query('canvas') canvas: HTMLCanvasElement;
@@ -150,7 +152,7 @@ export default class Graph extends LitElement {
     return html`
       <figure>
         <canvas width=${this.width} height=${this.height}></canvas>
-        <figcaption>${this.formula}</figcaption>
+        <figcaption>${this.img ? html`<img src="${this.img}">` : ''}</figcaption>
       </figure>
     `;
 
