@@ -17,6 +17,8 @@ export default class Graph extends LitElement {
   // also size the camera
   @property() width: number = 300;
   @property() height: number = 150;
+  // if ratio is set, size canvas according to maximum space rather than set values
+  @property({ type: Number }) ratio: number | undefined;
 
   // the formula to render
   @property() formula: string = 'x^2';
@@ -39,6 +41,10 @@ export default class Graph extends LitElement {
     figure {
       display: inline-block;
       margin: 0;
+      width: 100%;
+    }
+    canvas.fill {
+      width: 100%;
     }
   `;
 
@@ -54,6 +60,13 @@ export default class Graph extends LitElement {
 
   updated () {
 
+    // if ratio, set the width and height properties
+    if (this.ratio !== undefined) {
+      this.canvas.width = this.canvas.clientWidth;
+      this.canvas.height = this.canvas.width / this.ratio;
+    }
+
+    // render
     this.gl.clearRect(0, 0, this.canvas.width, this.canvas.height);
     this.drawGrid();
     this.drawLine();
@@ -151,7 +164,7 @@ export default class Graph extends LitElement {
 
     return html`
       <figure>
-        <canvas width=${this.width} height=${this.height}></canvas>
+        <canvas class="${this.ratio ? "fill" : ''}" width=${this.width} height=${this.height}></canvas>
         <figcaption>${this.img ? html`<img src="${this.img}">` : ''}</figcaption>
       </figure>
     `;
