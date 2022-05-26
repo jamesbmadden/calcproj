@@ -48,6 +48,13 @@ h2 {
 }
 
 /**
+  Make images in sections only take up the max width
+*/
+.section img {
+  width: 100%;
+}
+
+/**
   all the styles for the navigation bar
 */
 nav {
