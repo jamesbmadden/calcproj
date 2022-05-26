@@ -100,7 +100,7 @@ nav button:first-child {
 /**
   Mobile styles
 */
-@media (max-width: 400px) {
+@media (max-width: 450px) {
 
   body { flex-direction: column }
   nav {
