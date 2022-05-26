@@ -23,3 +23,46 @@ article {
   border-top-left-radius: 32px;
   border-bottom-left-radius: 32px;
 }
+
+/**
+  all the styles for the navigation bar
+*/
+nav {
+  width: 96px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+nav button {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  box-shadow: 0 8px 16px rgba(127, 153, 150, 0.6);
+  background: #ebfffe;
+  border: solid 2px #abcfcb;
+  border-radius: 16px;
+  transform: scale(0.9);
+  opacity: 0.5;
+  transition: opacity 0.2s, transform 0.2s;
+  cursor: pointer;
+  font-size: 20px;
+}
+/**
+ * Disabled button is the active page
+*/
+nav button:disabled {
+  transform: scale(1);
+  opacity: 1;
+  cursor: default;
+  border: solid 2px #80cbc4;
+}
+nav button:not(:disabled):hover {
+  transform: scale(1) rotate(10deg);
+  opacity: 1;
+}
+nav button:first-child {
+  margin-bottom: 1rem;
+}
