@@ -1,1 +1,1 @@
-export {};
+import './components/jbm-graph/jbm-graph';
