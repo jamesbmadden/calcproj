@@ -57,8 +57,8 @@ export default class Nav extends LitElement {
 
     return html`
       <nav>
-        <button ?disabled=${this.page === 1}>I</button>
-        <button ?disabled=${this.page === 2}>II</button>
+        <a href="./"><button ?disabled=${this.page === 1}>I</button></a>
+        <a href="./2.html"><button ?disabled=${this.page === 2}>II</button></a>
       </nav>
     `;
 
