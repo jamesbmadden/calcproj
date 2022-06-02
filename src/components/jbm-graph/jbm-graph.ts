@@ -30,6 +30,13 @@ export default class Graph extends LitElement {
 
   @property() img: string | null = null;
 
+  // keep track of whether the mouse is down to allow clicking to drag
+  isMouseDown: boolean = false;
+  _lastMouseX: number = -1;
+  _lastMouseY: number = -1;
+  _bindedMouseUp!: Function;
+  _bindedMouseMove!: Function;
+
   // get a reference to the canvas for rendering
   // @ts-ignore
   @query('canvas') canvas: HTMLCanvasElement;
@@ -55,6 +62,56 @@ export default class Graph extends LitElement {
 
     // @ts-ignore
     this.gl = this.canvas.getContext('2d');
+
+    // keep track of some mouse stuff to allow clicking and dragging
+    // mouse should have to be clicked on the canvas, but moving and releasing can be anywhere
+    this.canvas.addEventListener('mousedown', this.mouseDown.bind(this));
+
+    this._bindedMouseUp = this.mouseUp.bind(this);
+    this._bindedMouseMove = this.mouseMove.bind(this);
+
+    // @ts-ignore
+    addEventListener('mouseup', this._bindedMouseUp);
+    // @ts-ignore
+    addEventListener('mousemove', this._bindedMouseMove);
+
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+
+    // @ts-ignore
+    removeEventListener('mouseup', this._bindedMouseUp);
+    // @ts-ignore
+    removeEventListener('mousemove', this._bindedMouseMove);
+  }
+
+  // mouse up has to work anywhere
+
+  // keep track of whether mouse is up or down
+  mouseDown (event: MouseEvent) { this.isMouseDown = true; this._lastMouseX = event.clientX; this._lastMouseY = event.clientY }
+  mouseUp () { this.isMouseDown = false; }
+  mouseMove (event: MouseEvent) {
+
+    // only do anything if the mouse is down
+    if (this.isMouseDown) {
+
+      // find out how many pixels per 1 on the grid
+      const pixelsPerPointX = this.canvas.width / this.xRange;
+      const pixelsPerPointY = this.canvas.height / this.yRange;
+
+      // how much to adjust the canvas
+      const moveX = (event.clientX - this._lastMouseX) / pixelsPerPointX;
+      const moveY = (event.clientY - this._lastMouseY) / pixelsPerPointY;
+
+      this.startX -= moveX;
+      this.startY += moveY;
+
+      // update the last mouse position for next time
+      this._lastMouseX = event.clientX;
+      this._lastMouseY = event.clientY;
+
+    }
 
   }
 
@@ -82,19 +139,20 @@ export default class Graph extends LitElement {
     const pixelsPerPointX = this.canvas.width / this.xRange;
     const pixelsPerPointY = this.canvas.height / this.yRange;
 
-    console.log(pixelsPerPointX, pixelsPerPointY);
-
     // draw with light grey
     this.gl.strokeStyle = this.gridColour;
     this.gl.lineWidth = 1;
 
-    // render all the squares
-    for (let x = 0; x < this.xRange; x++) {
+    const adjustX = (this.startX % 1) * pixelsPerPointX; 
+    const adjustY = (this.startY % 1) * pixelsPerPointY;
 
-      for (let y = 0; y < this.yRange; y++) {
+    // render all the squares
+    for (let x = -1; x < this.xRange + 1; x++) {
+
+      for (let y = -1; y < this.yRange + 1; y++) {
 
         this.gl.beginPath();
-        this.gl.rect(x * pixelsPerPointX, y * pixelsPerPointY, pixelsPerPointX, pixelsPerPointY);
+        this.gl.rect(x * pixelsPerPointX - adjustX, y * pixelsPerPointY + adjustY, pixelsPerPointX, pixelsPerPointY);
         this.gl.stroke();
 
       }
@@ -129,7 +187,6 @@ export default class Graph extends LitElement {
       // if y at this position is undefined, then don't draw anything, start a new stroke for next time.
       const result = solve(this.formula, x);
 
-      console.log(x, result);
       if (result > this.startY + this.yRange || result < this.startY - 2) {
 
         // the line is outside of the visible area, so just ignore it for now
