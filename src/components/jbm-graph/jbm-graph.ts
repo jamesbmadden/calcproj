@@ -149,13 +149,17 @@ export default class Graph extends LitElement {
     // render all the squares
     for (let x = -1; x < this.xRange + 1; x++) {
 
-      for (let y = -1; y < this.yRange + 1; y++) {
+      this.gl.beginPath();
+      this.gl.rect(x * pixelsPerPointX - adjustX, 0, 1, this.canvas.height);
+      this.gl.stroke();
 
-        this.gl.beginPath();
-        this.gl.rect(x * pixelsPerPointX - adjustX, y * pixelsPerPointY + adjustY, pixelsPerPointX, pixelsPerPointY);
-        this.gl.stroke();
+    }
 
-      }
+    for (let y = -1; y < this.yRange + 1; y++) {
+
+      this.gl.beginPath();
+      this.gl.rect(0, y * pixelsPerPointY + adjustY, this.canvas.width, 1);
+      this.gl.stroke();
 
     }
 
