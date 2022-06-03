@@ -32,6 +32,9 @@ article {
   display: flex;
   align-items: start;
 }
+.two-rows {
+  grid-row: span 2;
+}
 
 /**
   Text styles
