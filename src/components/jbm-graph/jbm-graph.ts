@@ -171,7 +171,7 @@ export default class Graph extends LitElement {
     for (let y = -1; y < this.yRange + 1; y++) {
 
       // if this line is at 0, make it black. Otherwise, light grey
-      if (Math.floor(this.startY + this.yRange) - y === 0) {
+      if (Math.floor(this.startY + this.yRange) - y + 1 === 0) {
         this.gl.strokeStyle = "rgba(0, 0, 0, 0.5)";
       } else {
         this.gl.strokeStyle = this.gridColour;
