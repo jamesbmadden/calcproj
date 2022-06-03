@@ -28,6 +28,10 @@ article {
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 16px;
 }
+.split-img {
+  display: flex;
+  align-items: start;
+}
 
 /**
   Text styles
