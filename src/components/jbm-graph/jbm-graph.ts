@@ -11,7 +11,7 @@ export default class Graph extends LitElement {
 
   // some stuff for positioning the "lens" of the canvas
   @property() startX: number = -5;
-  @property() startY: number = -2;
+  @property() startY: number = -2.5;
   @property() xRange: number = 10;
   @property() yRange: number = 5;
   // also size the camera
@@ -52,6 +52,12 @@ export default class Graph extends LitElement {
     }
     canvas.fill {
       width: 100%;
+    }
+    canvas {
+      box-shadow: 0 4px 16px rgba(127, 153, 150, 0.3);
+      z-index: 1;
+      position: relative;
+      border-radius: 32px;
     }
   `;
 
@@ -149,6 +155,13 @@ export default class Graph extends LitElement {
     // render all the squares
     for (let x = -1; x < this.xRange + 1; x++) {
 
+      // if this line is at 0, make it black. Otherwise, light grey
+      if (Math.ceil(this.startX) + x === 0) {
+        this.gl.strokeStyle = "rgba(0, 0, 0, 0.5)";
+      } else {
+        this.gl.strokeStyle = this.gridColour;
+      }
+
       this.gl.beginPath();
       this.gl.rect(x * pixelsPerPointX - adjustX, 0, 1, this.canvas.height);
       this.gl.stroke();
@@ -156,6 +169,13 @@ export default class Graph extends LitElement {
     }
 
     for (let y = -1; y < this.yRange + 1; y++) {
+
+      // if this line is at 0, make it black. Otherwise, light grey
+      if (Math.floor(this.startY) + y === 0) {
+        this.gl.strokeStyle = "rgba(0, 0, 0, 0.5)";
+      } else {
+        this.gl.strokeStyle = this.gridColour;
+      }
 
       this.gl.beginPath();
       this.gl.rect(0, y * pixelsPerPointY + adjustY, this.canvas.width, 1);
