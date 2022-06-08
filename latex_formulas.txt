@@ -44,15 +44,16 @@ newton's method extrema:
 &x_{6} = x_{5} - \frac{f^\prime(x_{5})}{f^{\prime\prime}(x_{5})} = -0.6403220240756102 \\
 &x_{7} = x_{6} - \frac{f^\prime(x_{6})}{f^{\prime\prime}(x_{6})} = -0.6403220240756095 \\
 &x_{8} = x_{7} - \frac{f^\prime(x_{7})}{f^{\prime\prime}(x_{7})} = -0.6403220240756095 \\\\
-&\text{Extrema at x=-0.6403220240756095}\\\\
+&\text{Extrema at x = -0.6403220240756095}\\\\
 
-&x_{0} = 10\\
-&x_{1} = x_{0} - \frac{f^\prime(x_{0})}{f^{\prime\prime}(x_{0})} = -1.25 \\
-&x_{2} = x_{1} - \frac{f^\prime(x_{1})}{f^{\prime\prime}(x_{1})} = -0.38348329606991893 \\
-&x_{3} = x_{2} - \frac{f^\prime(x_{2})}{f^{\prime\prime}(x_{2})} = -0.6818991485614752 \\
-&x_{4} = x_{3} - \frac{f^\prime(x_{3})}{f^{\prime\prime}(x_{3})} = -0.640734490526375 \\
-&x_{5} = x_{4} - \frac{f^\prime(x_{4})}{f^{\prime\prime}(x_{4})} = -0.6403220731049852 \\
-&x_{6} = x_{5} - \frac{f^\prime(x_{5})}{f^{\prime\prime}(x_{5})} = -0.6403220240756102 \\
-&x_{7} = x_{6} - \frac{f^\prime(x_{6})}{f^{\prime\prime}(x_{6})} = -0.6403220240756095 \\
-&x_{8} = x_{7} - \frac{f^\prime(x_{7})}{f^{\prime\prime}(x_{7})} = -0.6403220240756095 \\\\
+&x_{0} = -10\\
+&x_{1} = x_{0} - \frac{f^\prime(x_{0})}{f^{\prime\prime}(x_{0})} = -3.4464043419267307 \\
+&x_{2} = x_{1} - \frac{f^\prime(x_{1})}{f^{\prime\prime}(x_{1})} = -4.495490804918985 \\
+&x_{3} = x_{2} - \frac{f^\prime(x_{2})}{f^{\prime\prime}(x_{2})} = -5.548308199132007 \\
+&x_{4} = x_{3} - \frac{f^\prime(x_{3})}{f^{\prime\prime}(x_{3})} = -6.559808083465518 \\
+&x_{5} = x_{4} - \frac{f^\prime(x_{4})}{f^{\prime\prime}(x_{4})} = -7.366361081071725 \\
+&\text{...}\\
+&x_{11} = x_{10} - \frac{f^\prime(x_{10})}{f^{\prime\prime}(x_{10})} = -7.8812769852837254 \\
+&x_{12} = x_{11} - \frac{f^\prime(x_{11})}{f^{\prime\prime}(x_{11})} = -7.8812769852837254 \\\\
+&\text{Extrema at x = -7.8812769852837254}
 \end{align}
