@@ -65,7 +65,8 @@ point of inflection:
 &x_{2} = x_{1} - \frac{f^{\prime\prime}(x_{1})}{f^{\prime\prime\prime}(x_{1})} = -1.6872995133023139 \\
 &x_{3} = x_{2} - \frac{f^{\prime\prime}(x_{2})}{f^{\prime\prime\prime}(x_{2})} = -1.6874911734878901 \\
 &x_{4} = x_{3} - \frac{f^{\prime\prime}(x_{3})}{f^{\prime\prime\prime}(x_{3})} = -1.6874912029892823 \\
-&x_{5} = x_{4} - \frac{f^{\prime\prime}(x_{4})}{f^{\prime\prime\prime}(x_{4})} = -1.687491202989283  \\\\
+&x_{5} = x_{4} - \frac{f^{\prime\prime}(x_{4})}{f^{\prime\prime\prime}(x_{4})} = -1.687491202989283  \\
+&x_{6} = x_{5} - \frac{f^{\prime\prime}(x_{5})}{f^{\prime\prime\prime}(x_{5})} = -1.687491202989283  \\\\
 
 &f(-1.69) = -0.30743866688046273 \\
 &\text{Therefore (-1.69, -0.31) is a point of inflection.}
