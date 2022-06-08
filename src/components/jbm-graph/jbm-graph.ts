@@ -11,9 +11,9 @@ export default class Graph extends LitElement {
 
   // some stuff for positioning the "lens" of the canvas
   @property() startX: number = -5;
-  @property() startY: number = -2.5;
+  @property() startY: number = -3.75;
   @property() xRange: number = 10;
-  @property() yRange: number = 5;
+  @property() yRange: number = 7.5;
   // also size the camera
   @property() width: number = 300;
   @property() height: number = 150;
