@@ -71,3 +71,18 @@ point of inflection:
 &f(-1.69) = -0.30743866688046273 \\
 &\text{Therefore (-1.69, -0.31) is a point of inflection.}
 \end{align}
+
+periods of concavity
+\begin{align}
+&f^{\prime\prime}(-2) = -0.40625 \\
+&f^{\prime\prime}(-1.69) = 0 \\
+&f^{\prime\prime}(-1) = 1.3580246913580247  \\\\
+
+&f^{\prime\prime}(1) = 0.4489795918367347 \\
+&f^{\prime\prime}(2) = undefined \\
+&f^{\prime\prime}(3) = -0.7590027700831025 \\\\
+
+&-\infty < x < -1.69: \text{Concave Down} \\
+&-1.69 < x < 2: \text{Concave Up} \\
+&2 < x < \infty : \text{Concave Down}
+\end{align}
