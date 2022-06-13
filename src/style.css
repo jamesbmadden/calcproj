@@ -128,3 +128,18 @@ nav button:first-child {
   }
 
 }
+
+@media print {
+
+  nav {
+    display: none;
+  }
+  article {
+    overflow-y: unset;
+    height: unset;
+  }
+  body {
+    display: block;
+  }
+
+}
