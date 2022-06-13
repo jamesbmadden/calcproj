@@ -86,3 +86,13 @@ periods of concavity
 &-1.69 < x < 2: \text{Concave Up} \\
 &2 < x < \infty : \text{Concave Down}
 \end{align}
+
+relativity derivative
+\begin{align}
+&t = \frac{1}{\sqrt{1 - (\frac{x}{3*10^8})^2}} \\
+&\frac{dt}{dx} = \frac{-\frac{1}{2}(1 - (\frac{x}{3*10^8})^2)^{-1/2}*-2\frac{x}{3*10^8}*\frac{1}{3*10^8}}{1 - (\frac{x}{3*10^8})^2} \\
+&\frac{dt}{dx} = \frac{-\frac{1}{2}*-2\frac{x}{3*10^8}*\frac{1}{3*10^8}}{(1 - (\frac{x}{3*10^8})^2)^\frac{3}{2}} \\
+&\frac{dt}{dx} = \frac{\frac{x}{3*10^8}*\frac{1}{3*10^8}}{(1 - (\frac{x}{3*10^8})^2)^\frac{3}{2}} \\
+&\frac{dt}{dx} = \frac{\frac{x}{9*10^{16}}}{(1 - (\frac{x}{3*10^8})^2)^\frac{3}{2}} \\
+&\frac{dt}{dx} = \frac{x}{9*10^{16}(1 - (\frac{x}{3*10^8})^2)^\frac{3}{2}} \\
+\end{align}
