@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="./src/main.ts"></script>
+    <link rel="stylesheet" href="./src/style.css" />
+    <link rel="prefetch" href="./2.html" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400&family=Noto+Sans:ital,wght@0,400;0,900;1,400&display=swap" rel="stylesheet"> 
+
+    <title>Calculus Project</title>
+  </head>
+  <body>
+    <nav>
+      <a href="./"><button disabled>I</button></a>
+      <a href="./2.html"><button>II</button></a>
+    </nav>
+    <article>
+      <h1>Part I</h1>
+
+      <jbm-graph lineColour="#00695c" ratio="1.33" formula="(x^3 - 2 * x^2 - 5 * x + 6) / (x^3 - 8)" img="./img/eq/1.1.svg"></jbm-graph>
+      
+      <div class="section">
+        <h2>Why I chose this equation</h2>
+        <p>I wanted to make my first equation cover as many of the properties as possible: a vertical and horizontal asymptote, an inflection point, and a local minimum.<br><br>
+        I started out picking zeroes I liked (x = -2, 1, & 3) and expanded to form the numerator, then picked a vertical asymptote at x = 2 and a horizontal asymptote, so the denominator had to have x^3 as its highest degree and be equal to 0 at x = 2.<br><br>
+        In retrospect, I should have picked round numbers for the maximums and minimums (or even the inflection point!) and then worked backwards to avoid Newton's Method, but I decided to stick with this function even when it required Newton's method.<br><br>
+        NOTE: in the PDF version of this, the extrema section isn't fully visible. Using the website it displays properly. Everything else should display just fine in both.</p>
+      </div>
+
+      <div class="section">
+        <h2>X & Y Intercepts</h2>
+        <div class="split-img">
+          <img src="./img/eq/1.1.xintercept.svg" />
+          <img src="./img/eq/1.1.yintercept.svg" />
+        </div>
+      </div>
+
+      <div class="section two-rows">
+        <h2>Asymptotes</h2>
+        <img src="./img/eq/1.1.asymptotes.svg" />
+      </div>
+
+      <div class="section">
+        <h2>End Behaviours</h2>
+        <p>As shown in the asymptotes section:<br>
+           As x approaches infinity, f(x) approaches 1.<br>
+          As x approaches negative infinity, f(x) approaches 1.</p>
+      </div>
+
+      <div class="section">
+        <h2>First derivative</h2>
+        <img src="./img/eq/1.1.derivative.svg" />
+      </div>
+
+      <div class="section two-columns">
+        <h2>Second derivative</h2>
+        <img src="./img/eq/1.1.second.derivative.svg" />
+      </div>
+
+
+      <div class="section two-rows">
+        <h2>Extrema</h2>
+        <img src="./img/eq/1.1.extrema.svg" />
+      </div>
+
+      <div class="section">
+        <h2>Maximums & Minimums</h2>
+        <img src="./img/eq/1.1.maxmin.svg" />
+        <img src="./img/eq/1.1.secondderivativetest.svg" />
+      </div>
+
+      <div class="section">
+        <h2>Intervals of Increase/Decrease</h2>
+        <img src="./img/eq/1.1.intervals.svg" />
+      </div>
+
+      <div class="section">
+        <h2>Point of Inflection</h2>
+        <img src="./img/eq/1.1.inflection.svg" />
+      </div>
+
+      <div class="section">
+        <h2>Intervals of Concavity</h2> 
+        <img src="./img/eq/1.1.concavity.svg" />
+      </div>
+
+      <div class="section two-columns">
+        <h2>Analysis</h2>
+        <p>When starting to analyze this function, I was very scared to use Newton's method. But while doing this project, I learned it's a lot easier when you can type the whole function into your computer and press enter 10 times instead of having to painstakingly input the whole function into a calculator for each step.<br><br>
+        Trying to design a function a function that included every necessary property reinforced the learning of what requirements a function needs to meet to have them, like what types of functions have a horizontal or vertical asymptote, minimums and maximums, points of inflection, etc.<br><br>
+        Getting the derivative of this function really grew my confidence with derivatives, especially getting the second derivative, because it was quite a lot of steps to get this derivative.</p>
+      </div>
+
+    </article>
+  </body>
+</html>
